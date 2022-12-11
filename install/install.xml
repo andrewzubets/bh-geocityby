@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+	<install>
+		<module_system>N</module_system>
+		<module_public>Y</module_public>
+		<isset_home_page>Y</isset_home_page>
+		<visible>Y</visible>
+		<module_id>geobyazub</module_id>
+		<module_name>Города РБ</module_name>
+		<version>1.0</version>
+		<php>/v1.0/migrate.php</php>
+		<access>
+			<default>
+				<access>on</access>
+				<list>
+					<all>on</all>
+				</list>
+				<read>
+					<all>on</all>
+				</read>
+				<edit>
+					<owner>on</owner>
+				</edit>
+				<delete>
+					<owner>on</owner>
+				</delete>
+			</default>
+		</access>
+	</install>
+	<uninstall>
+		<sql>/v1.0/uninstall.sql</sql>
+	</uninstall>
+</info>
