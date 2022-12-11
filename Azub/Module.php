@@ -39,6 +39,8 @@ class Module {
     public function migrate(){
         $migrations = $this->getMigrationClasses();
         $up_count = 0;
+
+        // получение класса подключения
         $db = Db::getInstance();
 
         foreach ($migrations as $class_name) {

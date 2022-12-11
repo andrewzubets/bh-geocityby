@@ -40,6 +40,7 @@ class City extends Table {
     public function getRegionName(){
         if (empty($this->region_id))
             return '';
+
         $r = Region::find($this->region_id);
         if (empty($r))
             return '';

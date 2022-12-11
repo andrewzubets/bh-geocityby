@@ -7,6 +7,7 @@ if (!function_exists('geobyazub_data_path')) {
      *
      * @param string $file_name название файла     *
      * @return string полный путь
+     * @package helpers
      */
     function geobyazub_data_path($file_name = ''){
         $dir = dirname(__DIR__); // /vendor
@@ -25,6 +26,7 @@ if (!function_exists('view_simple_panel')) {
      *                               Если render не указан вызывает метод __toString()
      *
      * @return mixed
+     * @package helpers
      */
     function view_simple_panel($title, $content){
         if (is_object($content))
@@ -49,6 +51,7 @@ if (!function_exists('starts_with')) {
      * @param string $test Значение
      *
      * @return bool
+     * @package helpers
      */
     function starts_with($str, $test){
         return substr($str, 0, strlen($test)) == $test;
@@ -63,6 +66,7 @@ if (!function_exists('ends_with')) {
      * @param string $test Значение
      *
      * @return bool
+     * @package helpers
      */
     function ends_with($str, $test){
         return substr($str, strlen($str) - strlen($test)) == $test;
@@ -77,6 +81,7 @@ if (!function_exists('str_contains')) {
      * @param string $test Значение
      *
      * @return bool
+     * @package helpers
      */
     function str_contains($str, $test){
         return str_pos($str, $test) !== false;
@@ -86,12 +91,11 @@ if (!function_exists('dd')) {
     /**
      * Функция отладки и завершения скрипта
      *
-     * @param mixed $d
+     * @param mixed $expression выражение для отладки
+     * @package helpers
      */
-    function dd($d){
-        var_dump($d);
+    function dd($expression){
+        var_dump($expression);
         exit();
     }
 }
-
-?>

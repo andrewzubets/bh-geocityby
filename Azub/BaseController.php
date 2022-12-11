@@ -3,6 +3,7 @@
 namespace Azub;
 
 use Core2\Common;
+use Core2\View\Alert;
 
 /**
  * Класс основы контроллеров
@@ -27,11 +28,20 @@ abstract class BaseController extends Common
      * @return void
      */
     public function action_index(){
-        if(isset($_GET['update']))
-            return $this->update($_GET['update']);
-        if(isset($_GET['create']))
-            return $this->create();
+        try {
 
-        return $this->index();
+            if (isset($_GET['update']))
+                return $this->update($_GET['update']);
+            if (isset($_GET['create']))
+                return $this->create();
+
+            return $this->index();
+        }
+        catch (\Exception $ex){
+            // log or save somewhere ???
+            return view_simple_panel('Ошибка', Alert::danger('Ошибка выполнения'));
+
+        }
+
     }
 }

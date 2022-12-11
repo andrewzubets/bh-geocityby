@@ -61,7 +61,7 @@ class ModAjax extends Ajax {
             $this->error[] = $e->getMessage();
         }
 
-        $this->done($data);
+        $this->done($input);
 
         return $this->response;
     }
@@ -79,7 +79,6 @@ class ModAjax extends Ajax {
             'name' => 'req',
             // 'region_id' => 'req'
         );
-
         if ($this->ajaxValidate($input, $fields)) {
             return $this->response;
         }
@@ -91,7 +90,7 @@ class ModAjax extends Ajax {
         $id = isset($input['params']['update']) ? (int)$input['params']['update'] : null;
         if (empty($id)) {
             $this->error[] = 'Идентификатор города не указан.';
-            $this->done($data);
+            $this->done($input);
 
             return $this->response;
         }
@@ -113,7 +112,7 @@ class ModAjax extends Ajax {
             $this->error[] = $e->getMessage();
         }
 
-        $this->done($data);
+        $this->done($input);
 
         return $this->response;
     }
